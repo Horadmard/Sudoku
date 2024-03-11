@@ -1,3 +1,7 @@
+import queue
+# import networkx as nx
+# import matplotlib.pyplot as plt
+
 class Node:
     def __init__(self, value):
         self.element = value
@@ -16,20 +20,27 @@ class Tree:
     def add(self, newNode):
         self.childs.append(newNode)
 
-    # def bfs(self):
-    #     print(self.firstNode.element)
-    #     queue = self.firstNode.childs
-    #     visited = []
+    def bfs(self):
 
-    #     for node in queue:
-    #         if node not in visited:
-    #             print(node.)
+        visited = set()
+        q = queue.Queue()
+        q.put(self.firstNode)
+        order = []
+
+        while not q.empty():
+            node = q.get()
+            if node not in visited:
+                order.append (node)
+                visited.add(node)
+            for node in self[node]:
+                if node not in visited:
+                    q.put(node)
 
     # def dfs(self):
     #     pass
     
 if __name__ == "__main__":
-    node = Node(5)
-    node2 = Node(10)
+    pass
 
-    node.childs.append(node2)
+
+

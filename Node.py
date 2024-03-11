@@ -6,8 +6,8 @@ class Node:
     def getEl(self):
         return self.element
 
-    def getNext():
-        return self.nextEl
+    def getChilds(self):
+        return self.childs
 
 class Tree:
     def __init__(self, fnode):

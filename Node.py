@@ -17,10 +17,6 @@ class Tree:
         self.childs.append(newNode)
 
     def printBFSTree(self):
-        temp = self.firstNode
-        print(temp.element)
-        for item in temp.childs:
-            print (temp.element)
-        while (temp != None):
-            print (temp.element)
-            temp = temp.nextEl
+        print(self.element)
+        for item in self.childs:
+            printBFSTree(item)

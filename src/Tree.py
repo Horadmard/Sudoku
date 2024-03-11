@@ -1,13 +1,8 @@
 class Node:
     def __init__(self, value):
         self.element = value
+        self.pos = [-1, -1]
         self.childs = []
-
-    def getEl(self):
-        return self.element
-
-    def getChilds(self):
-        return self.childs
 
 
 class Tree:

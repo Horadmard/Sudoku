@@ -1,6 +1,12 @@
+# The algorithm is not working
+
 def dfs(self, visited=None):
     if visited is None:
         visited = set()
+
+    stack = []
+    stack.append()
+    stack.pop()
 
     order = []
 

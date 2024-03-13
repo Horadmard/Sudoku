@@ -1,7 +1,8 @@
 # The Sudoku game as AI Project using BackTrack Algorithm
 
 To do:
-
-- Algorithm explanation
-- Time complexity
-- Space complexity
+- Implant BackTrack Algorithm
+- Implant Tree and DFS
+- Algorithm Explanation
+- Time Complexity?
+- Space Complexity?

@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value, pos=None):
         self.element = value
-        self.pos = [-1, -1]
+        self.pos = pos
         self.childs = []
 
 

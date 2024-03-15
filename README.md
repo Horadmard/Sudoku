@@ -10,4 +10,4 @@ To do:
 
 
 Tips:
-- Starting with low number blocks could accelerate our program
+- Starting with low number blocks could accelerate the program

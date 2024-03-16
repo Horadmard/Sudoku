@@ -22,4 +22,8 @@ Phase 1 we navigate the Sudoku table and by table, i mean the matrix we produced
 
 Then we make the tree completely set and start to navigate it with DFS method, to find the right answer. each $branch$ who reach to a $leaf$ or had right amount of $Nodes$ is the answer.
 
-${c|c}$
+${
+    c|c|c
+    c|c|c
+    c|c|c
+    }$

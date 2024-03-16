@@ -3,7 +3,7 @@
 To do:
 - Use $BackTrack$ Method
 - Implant Tree and DFS(or smt better)
-- The Sudoku table must be clarify as a matrix of matrices
+- The Sudoku table must be clarify as a $9*9$ block matrics that every block is a $9*9$ matrics
 - Algorithm Explanation
 - Time Complexity?
 - Space Complexity?

@@ -18,5 +18,6 @@ Tips:
 
 ## Algorithm:
 
-phase 1 we navigate the Sudoku table and by table i mean the matrix we produced befor. consider every blank part as a row or list of nodes in decision tree, where each node has 3 parts -> Value, Position and its Childs.
-Then we make the tree completely set.
+Phase 1 we navigate the Sudoku table and by table i mean the matrix we produced befor. consider every blank part as a row or list of nodes in decision tree, where each node has 3 parts -> Value, Position and its Childs.
+
+Then we make the tree completely set and start to navigate it with DFS method, to find the right answer. each branch who reach to a leaf or had right amount of nodes is the answer.

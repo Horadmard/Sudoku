@@ -21,3 +21,5 @@ Tips:
 Phase 1 we navigate the Sudoku table and by table, i mean the matrix we produced befor. consider every blank part as a row or list of $Nodes$ in $Decision Tree$, where each $Node$ has 3 parts -> Value, Position and its Childs.
 
 Then we make the tree completely set and start to navigate it with DFS method, to find the right answer. each $branch$ who reach to a $leaf$ or had right amount of $Nodes$ is the answer.
+
+${c|c}$

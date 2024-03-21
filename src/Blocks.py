@@ -15,6 +15,8 @@ numbers = [int(x) for x in col1]
 matrix = [numbers[i * 3:(i + 1) * 3] for i in range(3)]
 numpy_array = np.array(matrix)
 
+print(numpy_array)
+
 # Initialize an empty list to store the Blocks
 Blocks = []
 

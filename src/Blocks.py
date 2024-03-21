@@ -3,7 +3,7 @@ import pandas as pn
 import random as rand
 
 df = pn.read_csv('../docs/sample.csv')
-df[['Puzzle', 'Difficulty']].head()
+print(df[['Puzzle', 'Difficulty']].head())
 
 col1 = df['Puzzle'][rand.randint(0, 19)]
 

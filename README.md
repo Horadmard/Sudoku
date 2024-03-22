@@ -12,6 +12,9 @@ For Solving this problem we consider Fuctionality Programming.
 
 *Two last condition must be implanted in right place.*
 
+Also this Alghorithm needs to store navigated path, so defining a proper structure is necessary.
+In this situation it's Stack.
+
 
 
 

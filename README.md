@@ -2,7 +2,7 @@
 
 For Solving this problem we consider Fuctionality Programming.
 
-## Definition of Solve_function is as below:
+## New Algorithm and Definition of Solve_function is as below:
 
  1. Find the most_busy blank in the Sudoku Table
  2. Get a list of valid numbes that can be placed in blank

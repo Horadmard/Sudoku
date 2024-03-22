@@ -8,7 +8,7 @@ For Solving this problem we consider Fuctionality Programming.
  2. Give me a list of valid numbes that can be placed in blank
  3. Try to Solve new Sudoku Table
  4. If Algorithm reach a Deadend back to a previous level and try another valid number
- 5. If Sudoku table was full, the problem is solved and print the answer
+ 5. If Sudoku table was full(most_busy function couldn't find anything), the problem is solved and print the answer
 
 
 

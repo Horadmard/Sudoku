@@ -35,7 +35,7 @@ def importData():
     # for idx, Block in enumerate(Blocks):
     #     print(f"Block {idx}:\n{Block}\n")
     # Blocks is a list of {numpy.ndarray} and each element is a list of {numpy.ndarray} again.
-    return numpy_array
+    return matrix
 
 
 if __name__ == "__main__":

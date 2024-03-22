@@ -18,9 +18,9 @@ def importData():
 
     # Creating the 2D matrix
     matrix = [numbers[i * 9:(i + 1) * 9] for i in range(9)]
-    numpy_array = np.array(matrix)
+    # numpy_array = np.array(matrix)
 
-    print(numpy_array)
+    print(matrix)
 
     # Initialize an empty list to store the Blocks
     # Blocks = []

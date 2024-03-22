@@ -5,10 +5,11 @@ For Solving this problem we consider Fuctionality Programming.
 ## Definition of Solve_function is as below:
 
  1. Find the most_busy blank in the Sudoku Table
- 2. Give me a list of valid numbes that can be placed in blank
- 3. Try to Solve new Sudoku Table
- 4. If Algorithm reach a Deadend back to a previous level and try another valid number
- 5. If Sudoku table was full(most_busy function couldn't find anything), the problem is solved and print the answer
+ 2. Get a list of valid numbes that can be placed in blank
+ 4. Try to Solve the new Sudoku Table
+ 5. If Algorithm reach a Deadend back to a previous level and try another valid number
+ 6. If Sudoku table was full(most_busy function couldn't find anything), the problem is solved and print the answer
+Two last condition must be implanted in right place.
 
 
 

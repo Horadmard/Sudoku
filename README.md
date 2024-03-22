@@ -9,7 +9,8 @@ For Solving this problem we consider Fuctionality Programming.
  4. Try to Solve the new Sudoku Table
  5. If Algorithm reach a Deadend back to a previous level and try another valid number
  6. If Sudoku table was full(most_busy function couldn't find anything), the problem is solved and print the answer
-Two last condition must be implanted in right place.
+
+*Two last condition must be implanted in right place.*
 
 
 

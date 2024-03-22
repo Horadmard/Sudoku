@@ -1,3 +1,15 @@
+# Start Over
+
+For Solving this problem we consider Fuctionality Programming.
+
+Definition of Solve_function() is as below:
+ 1. Find the most_busy() blank in the Sudoku Table
+ 2. Give me a list of valid numbes that can be placed in blank
+ 3. Try to Solve new Sudoku Table 
+
+
+
+
 # The Sudoku game as AI Project using $BackTrack$ Algorithm
 
 To do:

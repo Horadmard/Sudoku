@@ -3,8 +3,8 @@ from values_of_location import value_of_location
 
 
 def the_fullest_location(*, sudoku: list) -> list:
-    tfl = []
-    tfl_len = 9
+    tfl = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    tfl_len = len(tfl)
 
 
     for i in range(9):

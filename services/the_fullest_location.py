@@ -22,7 +22,7 @@ def the_fullest_location(*, sudoku: list) -> list:
 
     # print(value_of_location(sudoku=sudoku, location=tfl))
     # print(tfl_len)
-    if tfl == [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+    if tfl_len == 0:
         return None
     return [tfl, tfl_values]
 

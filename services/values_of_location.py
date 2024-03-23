@@ -7,7 +7,6 @@ def value_of_location(*, sudoku: list, location: list) -> list:
     
     for i in range(9) :
         number = sudoku[row][i]
-        # print(number)
         if number in numbers :
             numbers.remove(number)
 
@@ -15,7 +14,6 @@ def value_of_location(*, sudoku: list, location: list) -> list:
 
     for i in range(9) :
         number = sudoku[i][col]
-        # print(number)
         if number in numbers :
             numbers.remove(number)   
 
@@ -25,10 +23,8 @@ def value_of_location(*, sudoku: list, location: list) -> list:
     for i in range(3) :
         for j in range(3) :
             number = sudoku[i + start_row][j + start_col]
-            # print(number)
             if number in numbers :
                 numbers.remove(number)
-        # print('\n')
     
 
     if numbers == [] :

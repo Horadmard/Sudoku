@@ -38,5 +38,5 @@ def importData():
     return matrix
 
 
-if __name__ == "__main__":
-    importData()
+# if __name__ == "__main__":
+#     importData()

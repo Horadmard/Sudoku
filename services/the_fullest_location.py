@@ -1,4 +1,5 @@
 import numpy as np
+from data import importData
 
 def the_fullest_location(sudoku: list) -> list:
 
@@ -20,7 +21,31 @@ def the_fullest_location(sudoku: list) -> list:
             fcol = col
     
     # Find the fullest Block
-    
+    fblock = []
+    curblock = []
+
+    for i in range(3):
+        for j in range(3):
+            fblock.append(sudoku[3*i][0:3])
+            fblock.append(sudoku[3*i + 1][0:3])
+            fblock.append(sudoku[3*i + 2][0:3])
+            break
+
+    # for i in range(3):
+    #     for j in range(3):
+    #         curblock = sudoku[i*3:(i+1)*3, j*3:(j+1)*3]
+    #     if curblock.count(0) < fblock.count(0):
+    #         fblock = curblock
+
+
+    # for i in range(3):
+    #     for j in range(3):
+    #         curblock = sudoku[i*3:(i+1)*3, j*3:(j+1)*3]
+    #         if curblock.count(0) < fblock.count(0):
+    #             fblock = curblock
+
+    print("\n fblock:\n",fblock)
+            
     
     # Define the position of most busy location
     pos = [sudoku.index(frow), sudoku_T.index(fcol)]
@@ -28,14 +53,17 @@ def the_fullest_location(sudoku: list) -> list:
 
 
 if __name__ == "__main__":
-    sudoku =[[0, 0, 0, 0, 0, 0, 0, 8, 0],
-             [0, 6, 0, 0, 0, 4, 0, 0, 0],
-             [0, 0, 1, 0, 0, 0, 9, 0, 0],
-             [2, 1, 0, 0, 8, 0, 0, 0, 0],
-             [0, 0, 0, 0, 1, 7, 0, 0, 6],
-             [0, 0, 3, 0, 0, 0, 4, 0, 0],
-             [0, 0, 0, 0, 9, 0, 0, 0, 0],
-             [7, 0, 8, 0, 0, 0, 0, 2, 0],
-             [4, 0, 9, 6, 0, 0, 7, 0, 0]]
+
+    the_fullest_location(importData())
+
+    # sudoku =[[0, 0, 0, 0, 0, 0, 0, 8, 0],
+    #          [0, 6, 0, 0, 0, 4, 0, 0, 0],
+    #          [0, 0, 1, 0, 0, 0, 9, 0, 0],
+    #          [2, 1, 0, 0, 8, 0, 0, 0, 0],
+    #          [0, 0, 0, 0, 1, 7, 0, 0, 6],
+    #          [0, 0, 3, 0, 0, 0, 4, 0, 0],
+    #          [0, 0, 0, 0, 9, 0, 0, 0, 0],
+    #          [7, 0, 8, 0, 0, 0, 0, 2, 0],
+    #          [4, 0, 9, 6, 0, 0, 7, 0, 0]]
     
-    print(the_fullest_location(sudoku))
+    # print(the_fullest_location(sudoku))

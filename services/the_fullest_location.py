@@ -4,14 +4,16 @@ from values_of_location import value_of_location
 
 def the_fullest_location(*, sudoku: list) -> list:
 
-    findex = [0, 0]
+    tfl = []
+    ltfl = 9
 
     for i in range(9):
         for j in range(9):
-            if sudoku[i][j] == 0 and len(value_of_location(sudoku=sudoku, location=[i, j])) > len(value_of_location(sudoku=sudoku, location=findex)) and len(value_of_location(sudoku=sudoku, location=[i, j])) != 0:
-                findex = [i, j]
+            if sudoku[i][j] == 0 and len(value_of_location(sudoku=sudoku, location=[i, j])) > ltfl:
+                tfl = [i, j]
+                ltfl = len(value_of_location(sudoku=sudoku, location=tfl))
 
-    return findex
+    return tfl
 
     # Find the fullest Block
 #     fblock = [0] * 9

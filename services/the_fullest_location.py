@@ -26,10 +26,12 @@ def the_fullest_location(sudoku: list) -> list:
 
     for i in range(3):
         for j in range(3):
-            fblock.append(sudoku[3*i][0:3])
-            fblock.append(sudoku[3*i + 1][0:3])
-            fblock.append(sudoku[3*i + 2][0:3])
-            break
+            for k in range(3):
+                for item in sudoku[3*i + k][3*j:3*j + 3]:
+                    curblock.append(item)
+            if curblock.count(0) < fblock.count(0):
+                fblock = curblock
+            curblock = []
 
     # for i in range(3):
     #     for j in range(3):

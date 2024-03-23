@@ -19,7 +19,6 @@ def the_fullest_location(*, sudoku: list) -> list:
         return None
     return tfl
 
-# Test
 
 if __name__ == "__main__":
     # sudoku = [[0, 0, 0, 0, 0, 0, 0, 8, 0],

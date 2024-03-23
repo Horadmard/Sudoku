@@ -21,14 +21,16 @@ def the_fullest_location(sudoku: list) -> list:
             fcol = col
     
     # Find the fullest Block
-    fblock = []
+    fblock = [0] * 9
     curblock = []
+    fbi = 0
 
     for i in range(3):
         for j in range(3):
             for k in range(3):
                 for item in sudoku[3*i + k][3*j:3*j + 3]:
                     curblock.append(item)
+            print(curblock)
             if curblock.count(0) < fblock.count(0):
                 fblock = curblock
             curblock = []

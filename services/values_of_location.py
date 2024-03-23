@@ -7,6 +7,7 @@ def value_of_location(*, sudoku: list, location: list) -> list:
     
     for i in range(9) :
         number = sudoku[row][i]
+        # print(number)
         if number in numbers :
             numbers.remove(number)
 
@@ -14,6 +15,7 @@ def value_of_location(*, sudoku: list, location: list) -> list:
 
     for i in range(9) :
         number = sudoku[i][col]
+        # print(number)
         if number in numbers :
             numbers.remove(number)   
 
@@ -23,8 +25,10 @@ def value_of_location(*, sudoku: list, location: list) -> list:
     for i in range(3) :
         for j in range(3) :
             number = sudoku[i + start_row][j + start_col]
+            # print(number)
             if number in numbers :
                 numbers.remove(number)
+        # print('\n')
     
 
     if numbers == [] :
@@ -37,24 +41,17 @@ def value_of_location(*, sudoku: list, location: list) -> list:
 
     
 # test
-board = [
-    [5, 3, 0, 0, 7, 0, 0, 0, 0],
-    [6, 0, 0, 1, 9, 5, 0, 0, 0],
-    [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 0, 0, 0, 6, 0, 0, 0, 3],
-    [4, 0, 0, 8, 0, 3, 0, 0, 1],
-    [7, 0, 0, 0, 2, 0, 0, 0, 6],
-    [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 0, 5],
-    [0, 0, 0, 0, 8, 0, 0, 7, 9]
-]
+# board = [
+#     [5, 3, 0, 0, 7, 0, 0, 0, 0],
+#     [6, 0, 0, 1, 9, 5, 0, 0, 0],
+#     [0, 9, 8, 0, 0, 0, 0, 6, 0],
+#     [8, 0, 0, 0, 6, 0, 0, 0, 3],
+#     [4, 0, 0, 8, 0, 3, 0, 0, 1],
+#     [7, 0, 0, 0, 2, 0, 0, 0, 6],
+#     [0, 6, 0, 0, 0, 0, 2, 8, 0],
+#     [0, 0, 0, 4, 1, 9, 0, 0, 5],
+#     [0, 0, 0, 0, 8, 0, 0, 7, 9]
+# ]
 
-loc = [0,2]
-print(value_of_location(sudoku=board,location=loc))
-
-
-
-
-
-
-
+# loc = [8,0]
+# print(value_of_location(sudoku=board,location=loc))

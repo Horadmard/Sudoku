@@ -13,6 +13,7 @@ def the_fullest_location(*, sudoku: list) -> list:
                 tfl_len = len(value_of_location(sudoku=sudoku, location=tfl))
 
 
+    print(value_of_location(sudoku=sudoku, location=tfl))
     # print(tfl_len)
     if tfl == []:
         return None
@@ -32,9 +33,4 @@ if __name__ == "__main__":
     #           [4, 0, 9, 6, 0, 0, 7, 0, 0]]
 
     sudoku = importData()
-
-    # for row in sudoku:
-    #     print(row)
-    # print('\n')
-
     print(the_fullest_location(sudoku=sudoku))

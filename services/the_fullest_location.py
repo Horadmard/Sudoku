@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 from data import importData
 
 def the_fullest_location(sudoku: list) -> list:

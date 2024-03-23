@@ -18,6 +18,29 @@ def the_fullest_location(sudoku: list) -> list:
                 fblock = curblock
                 fbi = [i, j]
             curblock = []
+    #----------------------------------------------------------------
+    # Position of any item in block is equal to [i * 3 + index / 3][j * 3 + index % 3]
+    frow, fcol = [0] * 9, [0] * 9
+    fpos = []
+    sudoku_T = [[sudoku[j][i] for j in range(len(sudoku))] for i in range(len(sudoku[0]))]
+    print(fbi)
+    print(fblock)
+    for i in range(len(fblock)):
+        if fblock[i] == 0:
+            indexr = 3 * fbi[0] + int(i / 3)
+            indexc = 3 * fbi[1] + int(i % 3)
+            currow = sudoku[indexr]
+            curcol = sudoku_T[indexc]
+            if currow.count(0) < frow.count(0) and curcol.count(0) < fcol.count(0):
+                frow = currow
+                fcol = curcol
+                pos = [indexr, indexc]
+            # sudoku[3*fbi[0]+fblock.index(item)/3][3*fbi[1]+fblock.index(item)%3]
+    print(frow, fcol, pos)
+    print(f'number of block: {9 - fblock.count(0)}\n number of row: {9 - frow.count(0)}\n number of col: {9 - fcol.count(0)}')
+    #----------------------------------------------------------------
+    return pos
+
 
     # for i in range(3):
     #     for j in range(3):

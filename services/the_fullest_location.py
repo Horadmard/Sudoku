@@ -13,7 +13,7 @@ def the_fullest_location(*, sudoku: list) -> list:
             curitem_values = value_of_location(
                 sudoku=sudoku, location=[i, j])
             curitem_len = len(curitem_values)
-            if sudoku[i][j] == 0 and curitem_len < tfl_len:  # ;)
+            if sudoku[i][j] == 0 and curitem_len < tfl_len:
                 tfl = [i, j]
                 tfl_values = curitem_values
                 tfl_len = curitem_len

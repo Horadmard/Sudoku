@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0, '../services/')  # Replace with the actual path
 
-from data import importData
+from data import importData, number_of_empty_cells
 from the_fullest_location import the_fullest_location
 from update import update_with_value, update
 
@@ -12,27 +12,24 @@ stack = []
 path = []
 
 
-def solve_sudoku(*, sudoku: list) -> list:
+def solve_sudoku(*, sudoku: list, max:int) -> list:
 
-    # defin node
-    # loc, values
+    # defin node loc, values
     loc, values = the_fullest_location(sudoku=sudoku)
-    node = loc, values
 
     # if there is no choice return to previous state
     if values == None: 
         stack.pop()
         return 0
-    
+
+    node = loc, values
     stack.append(node)
 
-    # check if problem solved
-    # if stack.count() == max:
-    #     pass
+    if stack.count() == max:
+        pass
 
     # solve the rest of sudoku
-    update_with_value(sudoku=sudoku, location=loc, value=values.pop())
-
+    update_with_value(sudoku=sudoku, location=loc, value=stack.pop())
     solve_sudoku(sudoku=sudoku)
 
     pass
@@ -44,4 +41,6 @@ if __name__ == "__main__":
     List.append(1)
     List.pop()
 
-    solve_sudoku(sudoku=importData())
+    sudoku = sudoku=importData()
+    max_stack = number_of_empty_cells(sudoku=sudoku)
+    solve_sudoku(sudoku, max=max_stack)

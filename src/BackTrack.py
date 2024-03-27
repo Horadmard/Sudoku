@@ -15,20 +15,23 @@ path = []
 def solve_sudoku(*, sudoku: list) -> list:
 
     # defin node
+    # loc, values
     loc, values = the_fullest_location(sudoku=sudoku)
+    node = loc, values
 
     # if there is no choice return to previous state
     if values == None: 
         stack.pop()
         return 0
+    
+    stack.append(node)
 
-
-    stack.append(values)
-    if stack.count() == max:
-        pass
+    # check if problem solved
+    # if stack.count() == max:
+    #     pass
 
     # solve the rest of sudoku
-    update_with_value(sudoku=sudoku, location=loc, value=stack.pop())
+    update_with_value(sudoku=sudoku, location=loc, value=values.pop())
 
     solve_sudoku(sudoku=sudoku)
 
@@ -40,8 +43,5 @@ if __name__ == "__main__":
     List = [1, 2, 3, 4, 5]
     List.append(1)
     List.pop()
-    List.pop()
-    List.pop()
 
-    print(List)
     solve_sudoku(sudoku=importData())

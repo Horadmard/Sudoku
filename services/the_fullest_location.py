@@ -39,4 +39,9 @@ def the_fullest_location(*, sudoku: list) -> list:
 #               [4, 0, 9, 6, 0, 0, 7, 0, 0]]
 
 #     # sudoku = importData()
-#     print(the_fullest_location(sudoku=sudoku))
+#     for i in range(60):
+#         loc = the_fullest_location(sudoku=sudoku)[0]
+#         sudoku[loc[0]][loc[1]] = '#'
+
+#     for row in sudoku:
+#         print(row)

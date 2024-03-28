@@ -4,11 +4,11 @@ For Solving this problem we consider Fuctionality Programming.
 
 ## New Algorithm and Definition of Solve_function is as below:
 
- 1. Find the most_busy blank in the Sudoku Table
- 2. Get a list of valid numbes that can be placed in blank
+ 1. Find the the_fullest_location of empty cells in the Sudoku Table
+ 2. Get a list of valid numbers that can be placed in that empty cell and place it
  4. Try to Solve the new Sudoku Table
  5. If Algorithm reach a Deadend back to a previous level(acording to stored data) and try another valid number
- 6. If Sudoku table was full(most_busy function couldn't find anything), the problem is solved and print the answer
+ 6. If Sudoku table was full(the_fullest_location function couldn't find anything), the problem is solved and print the answer
 
 *Two last condition must be implanted in right place.*
 

@@ -1,5 +1,4 @@
-import sys
-sys.path.insert(0, '../services/')  # Replace with the actual path
+
 
 from data import importData, number_of_empty_cells
 from the_fullest_location import the_fullest_location

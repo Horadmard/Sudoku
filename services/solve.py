@@ -37,7 +37,7 @@ def solve_sudoku(*, sudoku: list, max:int) -> list:
 
 
     if len(stack) == max:
-        print(path)
+        # print(path)
         return None
 
     # Solve the rest of sudoku

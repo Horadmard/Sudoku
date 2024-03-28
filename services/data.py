@@ -1,8 +1,8 @@
 import pandas as pn
 import random as rand
 
-
-def importData():
+# Difficulty must be aded
+def importData() -> list:
     df = pn.read_csv('../docs/sample.csv')
 
     random_col = df['Puzzle'][rand.randint(0, 19)]

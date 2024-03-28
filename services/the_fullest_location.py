@@ -23,8 +23,9 @@ def the_fullest_location(*, sudoku: list) -> list:
     # print(value_of_location(sudoku=sudoku, location=tfl))
     # print(tfl_len)
     if tfl_len == 0:
-        return None
+        return [[],[]]
     return [tfl, tfl_values]
+
 
 
 # if __name__ == "__main__":

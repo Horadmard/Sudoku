@@ -27,10 +27,8 @@ def value_of_location(*, sudoku: list, location: list) -> list:
                 numbers.remove(number)
     
 
-    if numbers == [] :
-        return None
-    else :
-        return numbers
+    
+    return numbers
     
 
 

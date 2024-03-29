@@ -1,4 +1,5 @@
 
+
 from services.the_fullest_location import the_fullest_location
 from services.update import update_with_value, update
 from services.bring_me_data import importData, number_of_empty_cells
@@ -12,10 +13,11 @@ path = Stack()
 
 def solve_sudoku(*, sudoku: list, max:int) -> list:
 
+
     # Defin new_node loc, values
-    # loc, values = the_fullest_location(sudoku=sudoku)
     loc, values = the_fullest_location(sudoku=sudoku)
     new_node = Node(loc, values)
+
 
     # If there is no choice return to previous state
     while new_node.values == []:
@@ -26,19 +28,23 @@ def solve_sudoku(*, sudoku: list, max:int) -> list:
         else:
             return None
 
+
     if new_node.values:
         current_value = new_node.values.pop()
     else:
         return None
 
+
     stack.push(new_node)
     path.push(current_value)
     update_with_value(sudoku=sudoku, location=new_node.loc, value=current_value)
+
 
     # Solved or not?
     if stack.peek() == max:
         print(path)
         return None
+
 
     # Solve the rest of sudoku
     solve_sudoku(sudoku=sudoku, max=max)
@@ -46,14 +52,19 @@ def solve_sudoku(*, sudoku: list, max:int) -> list:
 
 if __name__ == "__main__":
 
+    # import initial data
     sudoku = importData()
     max_stack = number_of_empty_cells(sudoku=sudoku)
 
+
+    # Print results
     for row in sudoku:
         print(row)
     
+
     print('Solved pazzel ----------------------------------')
     solve_sudoku(sudoku=sudoku, max=max_stack)
+
 
     for row in sudoku:
         print(row)

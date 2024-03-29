@@ -3,12 +3,14 @@
 from services.the_fullest_location import the_fullest_location
 from services.update import update_with_value, update
 from services.bring_me_data import importData, number_of_empty_cells
+# from services.values_of_location import value_of_location
 from ds.node import Node
-from ds.stack import Stack
+# from stack import Stack
+# When i use stack module it doesn't work :(
 
 
-stack = Stack()
-path = Stack()
+stack = []
+path = []
 
 
 def solve_sudoku(*, sudoku: list, max:int) -> list:
@@ -35,14 +37,14 @@ def solve_sudoku(*, sudoku: list, max:int) -> list:
         return None
 
 
-    stack.push(new_node)
-    path.push(current_value)
+    stack.append(new_node)
+    path.append(current_value)
     update_with_value(sudoku=sudoku, location=new_node.loc, value=current_value)
 
 
     # Solved or not?
-    if stack.peek() == max:
-        print(path)
+    if len(stack) == max:
+        # print(path)
         return None
 
 

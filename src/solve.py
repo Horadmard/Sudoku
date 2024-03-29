@@ -1,8 +1,8 @@
 
-from data import importData, number_of_empty_cells
-from the_fullest_location import the_fullest_location
-from update import update_with_value, update
-from node import Node
+from services.the_fullest_location import the_fullest_location
+from services.update import update_with_value, update
+from services.bring_me_data import importData, number_of_empty_cells
+from ds.node import Node
 
 
 stack = []

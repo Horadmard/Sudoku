@@ -1,4 +1,4 @@
-from data import importData
+# from services.bring_me_data import importData
 from values_of_location import value_of_location
 
 

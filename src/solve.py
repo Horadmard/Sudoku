@@ -36,7 +36,7 @@ def solve_sudoku(*, sudoku: list, max:int) -> list:
     update_with_value(sudoku=sudoku, location=new_node.loc, value=current_value)
 
     # Solved or not?
-    if len(stack) == max:
+    if stack.peek() == max:
         print(path)
         return None
 

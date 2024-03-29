@@ -1,5 +1,4 @@
 
-
 from data import importData, number_of_empty_cells
 from the_fullest_location import the_fullest_location
 from update import update_with_value, update
@@ -52,7 +51,7 @@ if __name__ == "__main__":
     for row in sudoku:
         print(row)
     
-    print('Solving ----------------------------------')
+    print('Solved pazzel ----------------------------------')
     solve_sudoku(sudoku=sudoku, max=max_stack)
 
     for row in sudoku:

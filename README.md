@@ -6,14 +6,16 @@ For Solving this problem we consider Fuctional Programming.
 
  1. Find the the_fullest_location of empty cells in the Sudoku Table
  2. Get a list of values that can be placed in that empty cell(tfl).
- 3. while values have no value, then:
-     If stack atleast have one value, then:
-      pop from stack and path untill one of the nodes.values have atleast one element. update the sudoku table by every stack pop.
-     else: the problem is unsolvable
- 6. 
- 7. Try to Solve the new Sudoku Table
- 8. If Algorithm reach a Deadend back to a previous level(acording to stored data) and try another valid number
- 9. If Sudoku table was full(the_fullest_location function couldn't find anything), the problem is solved and print the answer
+ 3. Create a node with location and values.
+ 3. While node.values have no value, then:
+        If stack atleast have one value, then:
+            pop from stack and path untill one of the nodes.values have atleast one element. update the sudoku table by every stack pop with zero and location.
+        else: the problem is unsolvable(deadend)
+ 6. Next, pop an element from node.values, push it into path and push node into stack. update the sudoku table with value and location.
+ 7. If stack.length reached to number of empty cells, then: 
+        problem is solved.
+ 8. else:
+        Try to Solve the updated Sudoku Table
 
 *Two last condition must be implanted in right place.*
 

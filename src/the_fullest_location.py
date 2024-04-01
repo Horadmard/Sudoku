@@ -1,4 +1,5 @@
-from data import importData
+
+
 from values_of_location import value_of_location
 
 
@@ -23,8 +24,9 @@ def the_fullest_location(*, sudoku: list) -> list:
     # print(value_of_location(sudoku=sudoku, location=tfl))
     # print(tfl_len)
     if tfl_len == 0:
-        return None
+        return [[],[]]
     return [tfl, tfl_values]
+
 
 
 # if __name__ == "__main__":
@@ -39,4 +41,9 @@ def the_fullest_location(*, sudoku: list) -> list:
 #               [4, 0, 9, 6, 0, 0, 7, 0, 0]]
 
 #     # sudoku = importData()
-#     print(the_fullest_location(sudoku=sudoku))
+#     for i in range(60):
+#         loc = the_fullest_location(sudoku=sudoku)[0]
+#         sudoku[loc[0]][loc[1]] = '#'
+
+#     for row in sudoku:
+#         print(row)

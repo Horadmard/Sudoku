@@ -1,10 +1,9 @@
 
 
-from services.the_fullest_location import the_fullest_location
-from services.update import update_with_value, update
-from services.bring_me_data import importData, number_of_empty_cells
-# from services.values_of_location import value_of_location
-from ds.node import Node
+from the_fullest_location import the_fullest_location
+from update import update_with_value, update
+from data import importData, number_of_empty_cells
+from node import Node
 # from stack import Stack
 # When i use stack module it doesn't work :(
 

@@ -5,10 +5,15 @@ For Solving this problem we consider Fuctional Programming.
 ## New Algorithm and Definition of Solve_function is as below:
 
  1. Find the the_fullest_location of empty cells in the Sudoku Table
- 2. Get a list of valid numbers that can be placed in that empty cell and place it
- 4. Try to Solve the new Sudoku Table
- 5. If Algorithm reach a Deadend back to a previous level(acording to stored data) and try another valid number
- 6. If Sudoku table was full(the_fullest_location function couldn't find anything), the problem is solved and print the answer
+ 2. Get a list of values that can be placed in that empty cell(tfl).
+ 3. while values have no value, then:
+     If stack atleast have one value, then:
+      pop from stack and path untill one of the nodes.values have atleast one element. update the sudoku table by every stack pop.
+     else: the problem is unsolvable
+ 6. 
+ 7. Try to Solve the new Sudoku Table
+ 8. If Algorithm reach a Deadend back to a previous level(acording to stored data) and try another valid number
+ 9. If Sudoku table was full(the_fullest_location function couldn't find anything), the problem is solved and print the answer
 
 *Two last condition must be implanted in right place.*
 

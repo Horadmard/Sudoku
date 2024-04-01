@@ -7,17 +7,20 @@ For Solving this problem we consider Fuctional Programming.
  1. Find the the_fullest_location of empty cells in the Sudoku Table
  2. Get a list of values that can be placed in that empty cell(tfl).
  3. Create a node with location and values.
+
  3. While node.values have no value, then:
         If stack atleast have one value, then:
             pop from stack and path untill one of the nodes.values have atleast one element. update the sudoku table by every stack pop with zero and location.
         else: the problem is unsolvable(deadend)
- 6. Next, pop an element from node.values, push it into path and push node into stack. update the sudoku table with value and location.
+
+ 6. Next, pop an element from node.values, push it into path and push node into stack. 
+        update the sudoku table with value and location.
+
  7. If stack.length reached to number of empty cells, then: 
         problem is solved.
  8. else:
         Try to Solve the updated Sudoku Table
 
-*Two last condition must be implanted in right place.*
 
 Also this Alghorithm needs to store navigated path, so defining a proper structure is necessary.
 In this situation it's Stack.
@@ -44,7 +47,7 @@ Tips:
 - Do we have really need to Create all the tree? or just Create our navigating path
 - In the next project phase we can use the release option of github
 
-## Algorithm:
+## Algorithm(expired):
 
 Phase 1 we navigate the Sudoku table and by table, i mean the matrix we produced befor. consider every blank part as a row or list of $Nodes$ in $Decision Tree$, where each $Node$ has 3 parts -> Value, Position and its Childs.
 

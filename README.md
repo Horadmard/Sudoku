@@ -1,6 +1,6 @@
 # Start Over
 
-For Solving this problem we consider Fuctional Programming.
+For Solving this problem we consider Modular Programming.
 
 ## New Algorithm and Definition of Solve_function is as below:
 

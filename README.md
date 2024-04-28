@@ -5,8 +5,10 @@ For Solving this problem we consider Modular Programming.
 ## Contributing
 
 After installing required packages such as 
-. pandas
-. random
+1. pandas
+2. random
+
+run codes below:
 
 ```
 $ git clone https://github.com/Horadmard/Sudoku.git

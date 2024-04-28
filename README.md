@@ -6,7 +6,7 @@ For Solving this problem we consider Modular Programming.
 ```
 $ git clone https://github.com/Horadmard/Sudoku.git
 $ cd Sudoku/src
-$ ./solve.py
+$ python3 solve.py
 ```
 
 send us PRs thanks (;

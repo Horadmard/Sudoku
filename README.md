@@ -3,6 +3,11 @@
 For Solving this problem we consider Modular Programming.
 
 ## Contributing
+
+After installing required packages such as 
+. pandas
+. random
+
 ```
 $ git clone https://github.com/Horadmard/Sudoku.git
 $ cd Sudoku/src

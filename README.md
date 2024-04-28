@@ -2,6 +2,14 @@
 
 For Solving this problem we consider Modular Programming.
 
+## Contributing
+
+$ git clone https://github.com/Horadmard/Sudoku.git
+$ cd Sudoku/src
+$ ./solve.py
+
+send us PR (;
+
 ## New Algorithm and Definition of Solve_function is as below:
 
  1. Find the the_fullest_location of empty cells in the Sudoku Table

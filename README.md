@@ -3,12 +3,13 @@
 For Solving this problem we consider Modular Programming.
 
 ## Contributing
-
+```
 $ git clone https://github.com/Horadmard/Sudoku.git
 $ cd Sudoku/src
 $ ./solve.py
+```
 
-send us PR (;
+send us PRs thanks (;
 
 ## New Algorithm and Definition of Solve_function is as below:
 

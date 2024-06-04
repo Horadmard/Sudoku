@@ -3,8 +3,11 @@
 Set Starting Temperature / Generate Random Sudoku Table / 
 
 Iterations:
+
     1. Change the table randomly
+    
     2. Calculate the Cost Function
+    
     3. Reduce temperature exponentially (cooling rate)
 
 # Start Over

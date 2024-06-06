@@ -1,7 +1,7 @@
 
 from data import importData
 
-def solve(inital_temp, crate, org_sudoku, iter):
+def solve(*, inital_temp: int, crate: int, org_sudoku: list, iter: int) -> list:
 
     # code 
 

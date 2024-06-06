@@ -1,6 +1,6 @@
 
 
-def random_generate(org_sudoku):
+def random_generate(*, org_sudoku: list) -> list:
     
     # code
 
@@ -8,7 +8,7 @@ def random_generate(org_sudoku):
 
 
 
-def cost_func(sudoku):
+def cost_func(*, sudoku: list) -> int:
 
     # code 
 

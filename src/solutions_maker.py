@@ -1,7 +1,7 @@
 
 
-def new_sol(cur_sudoku, new_sudoku):
-    
+def new_solution(cur_sudoku, new_sudoku):
+
     # code 
 
     pass

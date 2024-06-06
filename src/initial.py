@@ -12,7 +12,7 @@ def value_of_location(*, sudoku: list, block: int) -> list:
     for i in range(3) :
         for j in range(3) :
             number = sudoku[i + start_row][j + start_col]
-            if number in numbers :
+            if number in numbers:
                 numbers.remove(number)
 
     return numbers

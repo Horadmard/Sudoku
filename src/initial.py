@@ -38,7 +38,24 @@ def random_generate(*, org_sudoku):
 
 
 
-def cost_func(*, sudoku):
+def cost_func(*, sudoku: list):
+
+    for row in range(9):
+        for i in range(1, 9):
+
+            num = sudoku[row].count(i)
+
+            if num:
+                cost += num-1
+
+
+    for col in range(9):
+        for i in range(1, 9):
+            num = sudoku.T[col].count(i)
+
+            if num:
+                cost += num-1
+
 
     # code 
 

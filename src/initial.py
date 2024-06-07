@@ -32,18 +32,24 @@ def random_generate(*, org_sudoku: list) -> list:
 
             for row in range(3):
                 for col in range(3):
+                    if len(values):
 
-                    index = rand.randint(len(values))
-                    num = values[index]
-                    values.remove(values[index])
+                        actual_row = block_row * 3 + row
+                        actual_col = block_col * 3 + col
+                        
+                        if initial_sudoku[actual_row][actual_col] == 0:
 
-                    actual_row = block_row * 3 + row
-                    actual_col = block_col * 3 + col
+                            index = rand.randint(0, len(values) - 1)
+                            num = values[index]
+                            values.remove(values[index])
 
-                    if initial_sudoku[actual_row][actual_col] == 0:
-                        initial_sudoku[actual_row][actual_col] = num  
+                            initial_sudoku[actual_row][actual_col] = num
+                        
+
+                        
+                    else:
+                        pass
     
-    # code
 
     return initial_sudoku
 
@@ -86,5 +92,9 @@ matrix = [
     [0, 0, 0, 0, 8, 0, 0, 7, 9]
 ]
 
+mat = random_generate(org_sudoku=matrix)
+
+for row in mat:
+    print(row)
 
 

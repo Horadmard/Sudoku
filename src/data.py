@@ -26,4 +26,4 @@ def number_of_empty_cells(sudoku: list):
                 number += 1
     return number
 
-print(importData())
+# print(importData())

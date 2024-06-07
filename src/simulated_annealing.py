@@ -1,4 +1,5 @@
-
+import random as rand
+import math
 from initial import *
 from data import importData
 from new_solutions import new_solution
@@ -7,17 +8,19 @@ def solve(*, T, crate, org_sudoku, initial_solution, iter):
 
     cur_solution = initial_solution(org_sudoku=org_sudoku)
 
-    while iter > 0 or cost_func(sudoku=cur_solution) != 0:
+    while T > .1 or cost_func(cur_solution) > 0:
 
-        new_sol = new_solution()
+        new_solution = new_solution()
 
-        if delta_energy < 0 or random.uniform(0, 1) < math.exp(-delta_energy / temp):
-            cur_sol = new_sol
+        delta_energy = cost_func(new_solution) - cost_func(cur_solution)
+
+        if delta_energy < 0 or rand.uniform(0, 1) < math.exp(-delta_energy / T):
+            cur_solution = new_solution
         
         T *= crate
     
 
-    pass
+    return cur_solution
 
 
 if __name__ == "__main__":
@@ -28,4 +31,4 @@ if __name__ == "__main__":
 
     sudoku = importData()
 
-    solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku)
+    print(solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku))

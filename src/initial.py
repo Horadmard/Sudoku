@@ -36,7 +36,7 @@ def random_generate(*, org_sudoku: list) -> list:
 
                         actual_row = block_row * 3 + row
                         actual_col = block_col * 3 + col
-                        
+
                         if initial_sudoku[actual_row][actual_col] == 0:
 
                             index = rand.randint(0, len(values) - 1)
@@ -96,5 +96,7 @@ mat = random_generate(org_sudoku=matrix)
 
 for row in mat:
     print(row)
+
+print(cost_func(sudoku=mat))
 
 

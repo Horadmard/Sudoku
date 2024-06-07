@@ -14,7 +14,7 @@ def value_of_location(*, sudoku: list, block_index: list) -> list:
             
             actual_row = block_row * 3 + row
             actual_col = block_col * 3 + col
-            number = matrix[actual_row][actual_col]
+            number = sudoku[actual_row][actual_col]
             if number in numbers:
                 numbers.remove(number)
 

@@ -3,7 +3,9 @@ import random as rand
 
 
 
-def new_solution(*, org_sudoku: list, cur_sudoku: list, new_sudoku: list) -> list:
+def new_solution_maker(*, org_sudoku: list, cur_sudoku: list) -> list:
+
+    new_sudoku = cur_sudoku
 
     block_row, block_col = rand.randint(0, 2), rand.randint(0, 2)
     block_row_new, block_col_new = rand.randint(0, 2), rand.randint(0, 2)

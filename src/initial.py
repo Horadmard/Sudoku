@@ -1,17 +1,20 @@
 import random as rand
+# import numpy as np
 
-def value_of_location(*, sudoku: list, block: int) -> list:
+def value_of_location(*, sudoku: list, block_index: list) -> list:
 
 
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    row = location[0]
-    col = location[1]
 
-    start_row = row - row % 3
-    start_col = col - col % 3
-    for i in range(3) :
-        for j in range(3) :
-            number = sudoku[i + start_row][j + start_col]
+
+    block_row, block_col = block_index
+
+    for row in range(3):
+        for col in range(3):
+            
+            actual_row = block_row * 3 + row
+            actual_col = block_col * 3 + col
+            number = matrix[actual_row][actual_col]
             if number in numbers:
                 numbers.remove(number)
 
@@ -19,47 +22,69 @@ def value_of_location(*, sudoku: list, block: int) -> list:
 
 
 
-def random_generate(*, org_sudoku):
+def random_generate(*, org_sudoku: list) -> list:
 
     initial_sudoku = org_sudoku
-    for i in range(9):
-        values = value_of_location(org_sudoku, block = i)
 
-        for i in range(3) :
-            for j in range(3) :
-                if org_sudoku[i][j] == 0:
+    for block_row in range(3):
+        for block_col in range(3):
+            values = value_of_location(sudoku=org_sudoku, block_index=[block_row, block_col])
+
+            for row in range(3):
+                for col in range(3):
+
                     index = rand.randint(len(values))
-                    initial_sudoku[i][j] = values[index]
-        
+                    num = values[index]
+                    values.remove(values[index])
+
+                    actual_row = block_row * 3 + row
+                    actual_col = block_col * 3 + col
+
+                    if initial_sudoku[actual_row][actual_col] == 0:
+                        initial_sudoku[actual_row][actual_col] = num  
     
     # code
 
-    pass
+    return initial_sudoku
 
 
 
 def cost_func(*, sudoku: list):
 
+    cost = 0
+
     for row in range(9):
-        for i in range(1, 9):
+        for item in range(1, 9):
 
-            num = sudoku[row].count(i)
-
+            num = sudoku[row].count(item)
             if num:
-                cost += num-1
+                cost += num - 1
 
 
-    for col in range(9):
-        for i in range(1, 9):
-            num = sudoku.T[col].count(i)
+    for row in range(9):
+        for item in range(1, 9):
 
+            num = sudoku.T[row].count(item)
             if num:
-                cost += num-1
+                cost += num - 1
 
 
-    # code 
+    return cost
 
-    pass
+
+
+# Sample 9x9 matrix (Sudoku grid)
+matrix = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9]
+]
 
 
 

@@ -22,7 +22,7 @@ def value_of_location(*, sudoku: list, block_index: list) -> list:
 
 
 
-def random_generate(*, org_sudoku: list) -> list:
+def initial_solution(*, org_sudoku: list) -> list:
 
     initial_sudoku = org_sudoku
 

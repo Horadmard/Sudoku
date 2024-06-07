@@ -1,5 +1,5 @@
 import random as rand
-# import numpy as np
+import numpy as np
 
 def value_of_location(*, sudoku: list, block_index: list) -> list:
 
@@ -63,14 +63,18 @@ def cost_func(*, sudoku: list):
         for item in range(1, 9):
 
             num = sudoku[row].count(item)
+            # print(item , '-', num)
             if num:
                 cost += num - 1
+
+    
+    tra = [[sudoku[j][i] for j in range(len(sudoku))] for i in range(len(sudoku[0]))]
 
 
     for row in range(9):
         for item in range(1, 9):
 
-            num = sudoku.T[row].count(item)
+            num = tra[row].count(item)
             if num:
                 cost += num - 1
 

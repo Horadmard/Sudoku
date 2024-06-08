@@ -6,7 +6,6 @@ from new_solutions import new_solution_maker
 
 
 
-
 def solve(*, T, crate, org_sudoku, iter):
 
     cur_solution = initial_solution(org_sudoku=org_sudoku)
@@ -34,7 +33,12 @@ if __name__ == "__main__":
 
     sudoku = importData()
 
-    answer = solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku)
+    initial_sudoku = initial_solution(org_sudoku=sudoku)
 
-    for row in answer:
-        print(row)
+    print(cost_func(sudoku=initial_sudoku))
+
+
+    # answer = solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku)
+
+    # for row in answer:
+    #     print(row)

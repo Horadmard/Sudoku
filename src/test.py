@@ -36,11 +36,11 @@ matrix = [
 ]
 
 cur = [
-    [5, 3, 1, 8, 7, 3, 1, 4, 9],
-    [6, 4, 7, 1, 9, 5, 2, 8, 7],
-    [2, 9, 8, 4, 2, 6, 3, 6, 5],
-    [8, 3, 1, 1, 6, 4, 8, 4, 3],
-    [4, 9, 2, 8, 5, 3, 2, 9, 1],
+    [5, 3, 1, 8, 7, 3, 1, 4, 9], #2
+    [6, 4, 7, 1, 9, 5, 2, 8, 7], #1
+    [2, 9, 8, 4, 2, 6, 3, 6, 5], #2
+    [8, 3, 1, 1, 6, 4, 8, 4, 3], #4
+    [4, 9, 2, 8, 5, 3, 2, 9, 1], #2
     [7, 6, 5, 9, 2, 7, 5, 7, 6],
     [4, 6, 8, 5, 7, 6, 2, 8, 1],
     [2, 5, 3, 4, 1, 9, 4, 6, 5],
@@ -52,8 +52,9 @@ cur = [
 # cur = initial_solution(org_sudoku=matrix)
 
 
+# mat = new_solution_maker(org_sudoku=matrix, cur_sudoku=cur)
 
-mat = new_solution_maker(org_sudoku=matrix, cur_sudoku=cur)
+# for row in mat:
+#     print(row)
 
-for row in mat:
-    print(row)
+print(cost_func(sudoku = cur))

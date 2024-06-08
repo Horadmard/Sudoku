@@ -5,6 +5,8 @@ from data import importData
 from new_solutions import new_solution_maker
 
 
+
+
 def solve(*, T, crate, org_sudoku, iter):
 
     cur_solution = initial_solution(org_sudoku=org_sudoku)

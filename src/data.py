@@ -4,7 +4,7 @@ import random as rand
 
 # Difficulty must be aded
 def importData() -> list:
-    df = pn.read_csv('../docs/sample.csv')
+    df = pn.read_csv('docs/sample.csv')
 
     random_col = df['Puzzle'][rand.randint(0, 19)]
     random_col = random_col.replace('.', '0')

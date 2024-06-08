@@ -1,3 +1,5 @@
+
+
 import random as rand
 
 
@@ -44,8 +46,6 @@ def initial_solution(*, org_sudoku: list) -> list:
                             values.remove(values[index])
 
                             initial_sudoku[actual_row][actual_col] = num
-                        
-
                         
                     else:
                         pass

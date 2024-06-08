@@ -52,9 +52,9 @@ cur = [
 # cur = initial_solution(org_sudoku=matrix)
 
 
-# mat = new_solution_maker(org_sudoku=matrix, cur_sudoku=cur)
+mat = new_solution_maker(org_sudoku=matrix, cur_sudoku=cur)
 
-# for row in mat:
-#     print(row)
+for row in mat:
+    print(row)
 
-print(cost_func(sudoku = cur))
+# print(cost_func(sudoku = cur))

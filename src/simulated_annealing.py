@@ -10,7 +10,7 @@ def solve(*, T, crate, org_sudoku, iter):
 
     cur_solution = initial_solution(org_sudoku=org_sudoku)
 
-    while T > .1 or cost_func(sudoku=cur_solution) > 0:
+    while iter > 0 and cost_func(sudoku=cur_solution) > 0:
 
         new_solution = new_solution_maker(org_sudoku=org_sudoku, cur_sudoku=cur_solution)
 
@@ -20,6 +20,8 @@ def solve(*, T, crate, org_sudoku, iter):
             cur_solution = new_solution
         
         T *= crate
+
+        iter -= 1
     
 
     return cur_solution
@@ -35,10 +37,10 @@ if __name__ == "__main__":
 
     initial_sudoku = initial_solution(org_sudoku=sudoku)
 
-    print(cost_func(sudoku=initial_sudoku))
+    # print(cost_func(sudoku=initial_sudoku))
 
 
-    # answer = solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku)
+    answer = solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku)
 
-    # for row in answer:
-    #     print(row)
+    for row in answer:
+        print(row)

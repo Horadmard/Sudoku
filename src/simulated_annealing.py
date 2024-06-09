@@ -15,16 +15,17 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
     while T > min_temp and cur_energy > 0:
 
         new_solution = generate_new_solution(org_sudoku=sudoku, cur_sudoku=cur_solution)
-
+        
         new_energy = cost_func(sudoku=new_solution)
+      
         cur_energy = cost_func(sudoku=cur_solution)
 
         delta_energy = new_energy - cur_energy
-
+        
         if delta_energy < 0 or random.uniform(0, 1) < math.exp(-delta_energy / T):
             cur_solution = new_solution
             cur_energy = new_energy
-        
+  
         T = T * cooling_rate
     
 
@@ -34,7 +35,25 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
 if __name__ == "__main__":
 
     sudoku = importData()
-    answer = solve(sudoku=sudoku)
 
-    for row in answer:
+    for row in sudoku:
         print(row)
+
+    sudoku2 = generate_initial_solution(org_sudoku=sudoku)
+
+    print()
+
+    for row in sudoku2:
+        print(row)
+
+    sudoku3 = generate_new_solution(org_sudoku=sudoku, cur_sudoku=sudoku2)
+
+    print()
+
+    for row in sudoku3:
+        print(row)
+
+    # answer = solve(sudoku=sudoku)
+
+    # for row in answer:
+    #     print(row)

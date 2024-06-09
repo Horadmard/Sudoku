@@ -2,7 +2,7 @@ import random as rand
 import math
 from initial import *
 from data import importData
-from new_solutions import new_solution_maker
+from new_solutions import generate_new_solution
 
 
 
@@ -49,13 +49,18 @@ cur = [
 ]
 
 
+
+sudoku = generate_new_solution(org_sudoku=matrix, cur_sudoku=initial_solution(org_sudoku=matrix))
+
+for row in sudoku:
+    print(row)
+
+
 # cur = initial_solution(org_sudoku=matrix)
 
 
 # mat = new_solution_maker(org_sudoku=matrix, cur_sudoku=cur)
 
-# for row in mat:
-#     print(row)
 
 # print(cost_func(sudoku = cur))
 

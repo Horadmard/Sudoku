@@ -81,7 +81,7 @@ def generate_new_solution_rec(*, org_sudoku: list, cur_sudoku: list) -> list:
 
 
     if element_row == element_row_new and element_col == element_col_new:
-        return new_solution_maker(org_sudoku=org_sudoku, cur_sudoku=cur_sudoku)
+        return generate_new_solution_rec(org_sudoku=org_sudoku, cur_sudoku=cur_sudoku)
     
 
     actual_row = block_row * 3 + element_row
@@ -91,7 +91,7 @@ def generate_new_solution_rec(*, org_sudoku: list, cur_sudoku: list) -> list:
     actual_col_new = block_col * 3 + element_col_new
     
     if org_sudoku[actual_row][actual_col] != 0 or org_sudoku[actual_row_new][actual_col_new] != 0:
-        return new_solution_maker(org_sudoku=org_sudoku, cur_sudoku=cur_sudoku)
+        return generate_new_solution_rec(org_sudoku=org_sudoku, cur_sudoku=cur_sudoku)
     
     a = cur_sudoku[actual_row_new][actual_col_new]
     b = cur_sudoku[actual_row][actual_col]

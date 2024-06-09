@@ -14,6 +14,7 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
     T = initial_temp
     cur_solution = generate_initial_solution(org_sudoku=sudoku)
     cur_energy = cost_func(sudoku=cur_solution)
+    
 
     while T > min_temp and cur_energy > 0:
 
@@ -30,6 +31,9 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
             cur_energy = new_energy
   
         T = T * cooling_rate
+
+    
+    print(cur_energy)
     
     return cur_solution
 
@@ -38,7 +42,17 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
 
 if __name__ == "__main__":
 
-    ans = solve(sudoku=importData())
+
+    original = importData()
+
+    ans = solve(sudoku=original)
+
+    for row in original:
+        print(row)
+
+    print()
+    print('Solving -------------------')
+    print()
 
     for row in ans:
-        print(ans)
+        print(row)

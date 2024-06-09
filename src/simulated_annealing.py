@@ -2,26 +2,25 @@ import random as rand
 import math
 from initial import *
 from data import importData
-from new_solutions import new_solution_maker
+from new_solutions import generate_new_solution
 
 
 
-def solve(*, T, crate, org_sudoku, iter):
+def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> list:
 
-    cur_solution = initial_solution(org_sudoku=org_sudoku)
+    T = initial_temp
+    cur_solution = initial_solution(org_sudoku=sudoku)
 
-    while iter > 0 and cost_func(sudoku=cur_solution) > 0:
+    while T > min_temp and cost_func(sudoku=cur_solution) > 0:
 
-        new_solution = new_solution_maker(org_sudoku=org_sudoku, cur_sudoku=cur_solution)
+        new_solution = generate_new_solution(org_sudoku=sudoku, cur_sudoku=cur_solution)
 
         delta_energy = cost_func(sudoku=new_solution) - cost_func(sudoku=cur_solution)
 
         if delta_energy < 0 or rand.uniform(0, 1) < math.exp(-delta_energy / T):
             cur_solution = new_solution
         
-        T *= crate
-
-        iter -= 1
+        T *= cooling_rate
     
 
     return cur_solution
@@ -29,18 +28,11 @@ def solve(*, T, crate, org_sudoku, iter):
 
 if __name__ == "__main__":
 
-    inital_temp = 1000
-    cooling_rate = .99
-    iteration = 100
-
     sudoku = importData()
 
     initial_sudoku = initial_solution(org_sudoku=sudoku)
 
-    # print(cost_func(sudoku=initial_sudoku))
-
-
-    answer = solve(T=inital_temp, crate=cooling_rate, iter=iteration, org_sudoku=sudoku)
+    answer = solve(sudoku=sudoku)
 
     for row in answer:
         print(row)

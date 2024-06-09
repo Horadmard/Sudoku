@@ -3,7 +3,7 @@ import random as rand
 
 
 
-def new_solution_maker(*, org_sudoku: list, cur_sudoku: list) -> list:
+def generate_new_solution(*, org_sudoku: list, cur_sudoku: list) -> list:
 
     new_sudoku = cur_sudoku
 
@@ -66,7 +66,7 @@ def new_solution_maker(*, org_sudoku: list, cur_sudoku: list) -> list:
     return new_sudoku
 
 
-def new_solution_maker_rec(*, org_sudoku: list, cur_sudoku: list) -> list:
+def generate_new_solution_rec(*, org_sudoku: list, cur_sudoku: list) -> list:
 
     new_sudoku = cur_sudoku
 

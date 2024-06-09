@@ -1,5 +1,8 @@
+
 import random
 import math
+
+
 from initial import *
 from data import importData
 from new_solutions import generate_new_solution

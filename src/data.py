@@ -4,6 +4,7 @@ import random as rand
 
 
 def importData() -> list:
+    
     df = pn.read_csv('docs/sample.csv')
 
     random_col = df['Puzzle'][rand.randint(0, 19)]
@@ -19,11 +20,15 @@ def importData() -> list:
 
 
 def number_of_empty_cells(sudoku: list):
+
     number = 0
+
     for row in sudoku:
         for cell in row:
+
             if cell == 0:
                 number += 1
+
     return number
 
 # print(importData())

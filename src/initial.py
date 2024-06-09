@@ -1,6 +1,7 @@
 
 
 import random as rand
+import copy
 
 
 def value_of_location(*, sudoku: list, block_index: list) -> list:
@@ -16,7 +17,9 @@ def value_of_location(*, sudoku: list, block_index: list) -> list:
             
             actual_row = block_row * 3 + row
             actual_col = block_col * 3 + col
+
             number = sudoku[actual_row][actual_col]
+
             if number in numbers:
                 numbers.remove(number)
 
@@ -26,14 +29,16 @@ def value_of_location(*, sudoku: list, block_index: list) -> list:
 
 def generate_initial_solution(*, org_sudoku: list) -> list:
 
-    initial_sudoku = org_sudoku
+    initial_sudoku = copy.deepcopy(org_sudoku)
 
     for block_row in range(3):
         for block_col in range(3):
+
             values = value_of_location(sudoku=org_sudoku, block_index=[block_row, block_col])
 
             for row in range(3):
                 for col in range(3):
+
                     if len(values):
 
                         actual_row = block_row * 3 + row
@@ -64,6 +69,7 @@ def cost_func(*, sudoku: list):
 
             num = sudoku[row].count(item)
             # print(item , '-', num)
+            
             if num:
                 cost += num - 1
 
@@ -75,6 +81,7 @@ def cost_func(*, sudoku: list):
         for item in range(1, 9):
 
             num = tra[row].count(item)
+            
             if num:
                 cost += num - 1
 

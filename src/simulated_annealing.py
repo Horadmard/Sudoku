@@ -9,7 +9,7 @@ from new_solutions import generate_new_solution
 
 
 
-def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.999999, min_temp=0.1) -> list:
+def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> list:
 
     T = initial_temp
     cur_solution = generate_initial_solution(org_sudoku=sudoku)

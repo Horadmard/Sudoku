@@ -9,7 +9,7 @@ from new_solutions import generate_new_solution
 def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> list:
 
     T = initial_temp
-    cur_solution = initial_solution(org_sudoku=sudoku)
+    cur_solution = generate_initial_solution(org_sudoku=sudoku)
     cur_energy = cost_func(sudoku=cur_solution)
 
     while T > min_temp and cur_energy > 0:
@@ -28,32 +28,14 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
   
         T = T * cooling_rate
     
-
     return cur_solution
+
+
 
 
 if __name__ == "__main__":
 
-    sudoku = importData()
+    ans = solve(sudoku=importData())
 
-    for row in sudoku:
-        print(row)
-
-    sudoku2 = generate_initial_solution(org_sudoku=sudoku)
-
-    print()
-
-    for row in sudoku2:
-        print(row)
-
-    sudoku3 = generate_new_solution(org_sudoku=sudoku, cur_sudoku=sudoku2)
-
-    print()
-
-    for row in sudoku3:
-        print(row)
-
-    # answer = solve(sudoku=sudoku)
-
-    # for row in answer:
-    #     print(row)
+    for row in ans:
+        print(ans)

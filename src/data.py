@@ -2,7 +2,7 @@
 import pandas as pn
 import random as rand
 
-# Difficulty must be aded
+
 def importData() -> list:
     df = pn.read_csv('docs/sample.csv')
 

@@ -70,7 +70,7 @@ def cost_func(*, sudoku: list):
             num = sudoku[row].count(item)
             # print(item , '-', num)
             
-            if num:
+            if num > 1:
                 cost += num - 1
 
     
@@ -82,7 +82,7 @@ def cost_func(*, sudoku: list):
 
             num = tra[row].count(item)
             
-            if num:
+            if num > 1:
                 cost += num - 1
 
 

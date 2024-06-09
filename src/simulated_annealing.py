@@ -29,9 +29,9 @@ def solve(*, sudoku, initial_temp=1000.0, cooling_rate=0.995, min_temp=0.1) -> l
         if delta_energy < 0 or random.uniform(0, 1) < math.exp(-delta_energy / T):
             cur_solution = new_solution
             cur_energy = new_energy
+            # print(cur_energy)
   
         T = T * cooling_rate
-
     
     print(cur_energy)
     

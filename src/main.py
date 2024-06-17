@@ -34,14 +34,14 @@ def simulated_anealing(sudoku):
         new_energy = cost_func(new_solution)
 
         for i in range(n-1):
-            temp_solution = generate_new_solution(empty_cells, cur_solution)
-            temp_energy = cost_func(temp_solution)
-            delta_energy = temp_energy - cur_energy
+            new_solution = generate_new_solution(empty_cells, cur_solution)
+            new_energy = cost_func(new_solution)
+            delta_energy = new_energy - cur_energy
             
             if (random.uniform(0, 1) < math.exp(-delta_energy / T)):
-                # (temp_energy < cur_energy) or 
-                cur_solution = temp_solution
-                cur_energy = temp_energy
+                # (new_energy < cur_energy) or 
+                cur_solution = new_solution
+                cur_energy = new_energy
                 break
             
         # delta_energy = new_energy - cur_energy

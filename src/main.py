@@ -9,16 +9,19 @@ import random
 
 
 
-def simulated_anealing(sudoku):
+def simulated_anealing(sudoku, max_iteration, max_temp, n):
 
-    max_iteration = 3000
+    
+
+    # max_iteration = 1000
     iteration = 0
 
-    max_temp = 100
+    # max_temp = 40
     min_temp = .01
     T = max_temp
 
-    n = 20000
+    # n = 20000
+
 
     file_name = f'data_plot_{max_iteration}_{max_temp}_{n}.csv'
 
@@ -45,8 +48,8 @@ def simulated_anealing(sudoku):
             new_energy = cost_func(new_solution)
             delta_energy = new_energy - cur_energy
             
-            if (random.uniform(0, 1) < math.exp(-delta_energy / T)):
-                # (new_energy < cur_energy) or 
+            if new_energy < cur_energy or random.uniform(0, 1) < math.exp(-delta_energy / T):
+
                 cur_solution = new_solution
                 cur_energy = new_energy
                 break
@@ -76,7 +79,7 @@ def simulated_anealing(sudoku):
 
 def importData() -> list:
     
-    df = pandas.read_csv('samples/Any.csv')
+    df = pandas.read_csv('samples/Simple.csv')
 
     index = random.randint(0, 9)
     random_row = df['Puzzle'][index]
@@ -172,9 +175,12 @@ for row in sudoku:
 
 print()
 
-solved = simulated_anealing(sudoku)
-for row in solved:
-    print(row)
+for max_iteration in range(500, 1500, 500):
+        for max_temp in range(50, 200, 50):
+            for n in range(1000, 10000, 3000):
+                solved = simulated_anealing(sudoku, max_iteration, max_temp, n)
+                for row in solved:
+                    print(row)
 
-print()
-print(cost_func(solved))
+                print()
+                print(cost_func(solved))

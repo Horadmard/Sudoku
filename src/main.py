@@ -9,24 +9,24 @@ import random
 
 
 
-def simulated_anealing(sudoku, max_iteration, max_temp, n):
+# def simulated_anealing(sudoku, max_iteration, max_temp, n):
 
-    
+def simulated_anealing(sudoku):
 
-    # max_iteration = 1000
+    max_iteration = 1000
     iteration = 0
 
-    # max_temp = 40
+    max_temp = 40
     min_temp = .01
     T = max_temp
 
-    # n = 20000
+    n = 20000
 
 
-    file_name = f'data_plot_{max_iteration}_{max_temp}_{n}.csv'
+    # file_name = f'data_plot_{max_iteration}_{max_temp}_{n}.csv'
 
-    with open(file_name, 'w') as f:
-        f.write('Iteration,Temp,Cost\n')
+    # with open(file_name, 'w') as f:
+    #     f.write('Iteration,Temp,Cost\n')
 
     # cooling_rate = .95
 
@@ -64,8 +64,8 @@ def simulated_anealing(sudoku, max_iteration, max_temp, n):
         print(f'Temp: {T}')
         print(f'Cost: {cur_energy}')
 
-        with open(file_name, 'a') as f:
-            f.write(f'{iteration},{T},{cur_energy}\n')
+        # with open(file_name, 'a') as f:
+        #     f.write(f'{iteration},{T},{cur_energy}\n')
         
         # T *= cooling_rate**iteration
         # T /= 1 + b*T
@@ -175,12 +175,20 @@ for row in sudoku:
 
 print()
 
-for max_iteration in range(500, 1500, 500):
-        for max_temp in range(50, 200, 50):
-            for n in range(1000, 10000, 3000):
-                solved = simulated_anealing(sudoku, max_iteration, max_temp, n)
-                for row in solved:
-                    print(row)
+solved = simulated_anealing(sudoku)
+for row in solved:
+    print(row)
 
-                print()
-                print(cost_func(solved))
+print()
+print(cost_func(solved))
+
+
+# for max_iteration in range(500, 1500, 500):
+#         for max_temp in range(50, 200, 50):
+#             for n in range(1000, 10000, 3000):
+#                 solved = simulated_anealing(sudoku, max_iteration, max_temp, n)
+#                 for row in solved:
+#                     print(row)
+
+#                 print()
+#                 print(cost_func(solved))

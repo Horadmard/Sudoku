@@ -7,16 +7,23 @@ import pandas
 import random
 
 
+
+
 def simulated_anealing(sudoku):
 
+    max_iteration = 3000
+    iteration = 0
 
-    max_temp = 200
-    min_temp = .4
+    max_temp = 100
+    min_temp = .01
     T = max_temp
 
-    max_iteration = 2500
-    iteration = 0
-    n = 100000
+    n = 20000
+
+    file_name = f'data_plot_{max_iteration}_{max_temp}_{n}.csv'
+
+    with open(file_name, 'w') as f:
+        f.write('Iteration,Temp,Cost\n')
 
     # cooling_rate = .95
 
@@ -53,6 +60,9 @@ def simulated_anealing(sudoku):
         print(f'Iteration: {iteration}')
         print(f'Temp: {T}')
         print(f'Cost: {cur_energy}')
+
+        with open(file_name, 'a') as f:
+            f.write(f'{iteration},{T},{cur_energy}\n')
         
         # T *= cooling_rate**iteration
         # T /= 1 + b*T
@@ -66,7 +76,7 @@ def simulated_anealing(sudoku):
 
 def importData() -> list:
     
-    df = pandas.read_csv('sample/Any.csv')
+    df = pandas.read_csv('samples/Any.csv')
 
     index = random.randint(0, 9)
     random_row = df['Puzzle'][index]

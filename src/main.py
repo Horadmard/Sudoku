@@ -9,8 +9,6 @@ import random
 
 
 
-# def simulated_anealing(sudoku, max_iteration, max_temp, n):
-
 def simulated_anealing(sudoku):
 
     max_iteration = 1000
@@ -20,7 +18,7 @@ def simulated_anealing(sudoku):
     min_temp = .01
     T = max_temp
 
-    n = 20000
+    n = 1000
 
 
     # file_name = f'data_plot_{max_iteration}_{max_temp}_{n}.csv'
@@ -71,6 +69,9 @@ def simulated_anealing(sudoku):
         # T /= 1 + b*T
         T = (max_iteration - iteration) ** 5 / max_iteration ** 5 * (max_temp - min_temp) + min_temp
         iteration += 1
+
+        # if T < min_temp + .01 and cur_energy != 0:
+        #     T += 1
 
 
 

@@ -1,4 +1,4 @@
-# Simulated Annealing
+## Simulated Annealing
 
 Set Starting Temperature / Generate Random Sudoku Table / 
 
